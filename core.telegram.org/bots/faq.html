@@ -43,7 +43,7 @@ You may also find the Bot API…">
   
   <div id="dev_page_content" dir="auto"><blockquote>
 <p>If you are new to Telegram bots, we recommend checking out our <a href="https://core.telegram.org/bots"><strong>Introduction to Bots</strong></a> first.
-You may also find the <strong><a href="api.html">Bot API Manual</a></strong> useful.</p>
+You may also find the <strong><a href="api.1.html">Bot API Manual</a></strong> useful.</p>
 </blockquote>
 <p><div class="dev_page_nav_wrap"></p>
 <p><a href="faq.html#general-questions"><strong>General</strong></a></p>
@@ -77,7 +77,7 @@ You may also find the <strong><a href="api.html">Bot API Manual</a></strong> use
 <hr>
 <h3><a class="anchor" href="faq.html#general-questions" id="general-questions"><i class="anchor-icon"></i></a>General Questions</h3>
 <h4><a class="anchor" href="faq.html#how-do-i-create-a-bot" id="how-do-i-create-a-bot"><i class="anchor-icon"></i></a>How do I create a bot?</h4>
-<p>Creating Telegram bots is super-easy, but you will need at least some skills at computer programming. In order for a bot to work, set up a bot account with <a href="https://telegram.me/botfather">@BotFather</a>, then connect it to your backend server via our <a href="api.html">API</a>.</p>
+<p>Creating Telegram bots is super-easy, but you will need at least some skills at computer programming. In order for a bot to work, set up a bot account with <a href="https://telegram.me/botfather">@BotFather</a>, then connect it to your backend server via our <a href="api.1.html">API</a>.</p>
 <p>Unfortunately, there are no out-of-the-box ways to create a working bot if you are not a developer. But we're sure you'll soon find plenty of bots created by other people to play with.</p>
 <h4><a class="anchor" href="faq.html#im-a-developer-where-can-i-find-some-examples" id="im-a-developer-where-can-i-find-some-examples"><i class="anchor-icon"></i></a>I'm a developer. Where can I find some examples?</h4>
 <p>Here are two sample bots, both written in PHP:</p>
@@ -105,7 +105,7 @@ We're collecting them on <a href="samples.1.html"><strong>this page »</strong><
 <ul>
 <li>Commands explicitly meant for them (e.g., /command@this_bot).</li>
 <li>General commands from users (e.g. /start) <strong>if</strong> the bot was the last bot to send a message to the group.</li>
-<li>Messages sent <a href="api.html#inline-mode">via</a> this bot.</li>
+<li>Messages sent <a href="api.1.html#inline-mode">via</a> this bot.</li>
 <li>Replies to any messages implicitly or explicitly meant for this bot.</li>
 </ul>
 <p><strong>Note</strong> that each particular message can only be available to <strong>one</strong> privacy-enabled bot at a time, i.e., a reply to bot A containing an explicit command for bot B or sent via bot C will only be available to bot A. Replies have the highest priority.</p>
@@ -113,16 +113,16 @@ We're collecting them on <a href="samples.1.html"><strong>this page »</strong><
 <p>Bots talking to each other could potentially get stuck in unwelcome loops. To avoid this, we decided that bots will not be able to see messages from other bots regardless of mode.</p>
 <h3><a class="anchor" href="faq.html#getting-updates" id="getting-updates"><i class="anchor-icon"></i></a>Getting Updates</h3>
 <h4><a class="anchor" href="faq.html#how-do-i-get-updates" id="how-do-i-get-updates"><i class="anchor-icon"></i></a>How do I get updates?</h4>
-<p>There are currently two ways of getting updates. You can either use <a href="api.html#getupdates">long polling</a> or <a href="api.html#setwebhook">Webhooks</a>. Please note that it's <strong>not</strong> possible to get updates via long polling while an outgoing Webhook is set.</p>
+<p>There are currently two ways of getting updates. You can either use <a href="api.1.html#getupdates">long polling</a> or <a href="api.1.html#setwebhook">Webhooks</a>. Please note that it's <strong>not</strong> possible to get updates via long polling while an outgoing Webhook is set.</p>
 <h4><a class="anchor" href="faq.html#long-polling-gives-me-the-same-updates-again-and-again" id="long-polling-gives-me-the-same-updates-again-and-again"><i class="anchor-icon"></i></a>Long polling gives me the same updates again and again!</h4>
-<p>The <a href="api.html#getupdates">getUpdates</a> method returns the earliest 100 unconfirmed updates. To confirm an update, use the <em>offset</em> parameter when calling getUpdates like this:</p>
+<p>The <a href="api.1.html#getupdates">getUpdates</a> method returns the earliest 100 unconfirmed updates. To confirm an update, use the <em>offset</em> parameter when calling getUpdates like this:</p>
 <pre><code>offset = update_id of last processed update + 1</code></pre>
 <p>All updates with <em>update_id</em> less than or equal to <em>offset</em> will be marked as confirmed on the server and will no longer be returned.</p>
 <h4><a class="anchor" href="faq.html#im-having-problems-with-webhooks" id="im-having-problems-with-webhooks"><i class="anchor-icon"></i></a>I'm having problems with Webhooks.</h4>
 <p>If you've set up your webhook successfully, but are not getting any updates, please remember:</p>
 <ul>
 <li>You need a valid SSL certificate for webhooks to work.</li>
-<li>To use a self-signed certificate, you need to upload your public key certificate using the <em>certificate</em> parameter in <a href="api.html#setwebhook">setWebhook</a>. Please upload as InputFile, sending a String will not work.</li>
+<li>To use a self-signed certificate, you need to upload your public key certificate using the <em>certificate</em> parameter in <a href="api.1.html#setwebhook">setWebhook</a>. Please upload as InputFile, sending a String will not work.</li>
 <li>Ports currently supported for Webhooks: <strong>443</strong>, <strong>80</strong>, <strong>88</strong>, <strong>8443</strong>.</li>
 <li>Wildcard certificates may not be supported.</li>
 <li>Redirects are not supported.</li>
@@ -140,17 +140,17 @@ We're collecting them on <a href="samples.1.html"><strong>this page »</strong><
 <p>Whenever you receive a webhook update, you have two options:</p>
 <p><strong>1. Issue POST to <a href="https://api.telegram.org/bot&amp;lt;token&amp;gt;/method">https://api.telegram.org/bot&amp;lt;token&amp;gt;/method</a></strong></p>
 <div>
-<a href="../file/811140979/3/5p52TWl9X2o/5c6d684ee0d6a4399d" target="_blank"><img src="../file/811140979/3/5p52TWl9X2o/5c6d684ee0d6a4399d" title="Confirm and request" class="dev_page_image" style="width:500px;"></a>
+<a href="../file/811140979/3/5p52TWl9X2o/5c6d684ee0d6a4399d.html" target="_blank"><img src="../file/811140979/3/5p52TWl9X2o/5c6d684ee0d6a4399d.html" title="Confirm and request" class="dev_page_image" style="width:500px;"></a>
 </div>
 <p><strong>2. Reply directly and give method as JSON payload in the reply</strong></p>
 <div>
-    <a href="../file/811140266/2/vGxiVmENAos/6cffad00cbe72be7f2" target="_blank"><img src="../file/811140266/2/vGxiVmENAos/6cffad00cbe72be7f2" title="Reply with payload" class="dev_page_image" style="width:500px;"></a></div>
+    <a href="../file/811140266/2/vGxiVmENAos/6cffad00cbe72be7f2.html" target="_blank"><img src="../file/811140266/2/vGxiVmENAos/6cffad00cbe72be7f2.html" title="Reply with payload" class="dev_page_image" style="width:500px;"></a></div>
 <blockquote>
 <p>You may also want to look at our sample <a href="samples/hellobot.html">HelloBot</a>, it offers a PHP implementation of this.</p>
 </blockquote>
 <h3><a class="anchor" href="faq.html#handling-media" id="handling-media"><i class="anchor-icon"></i></a>Handling Media</h3>
 <h4><a class="anchor" href="faq.html#how-do-i-download-files" id="how-do-i-download-files"><i class="anchor-icon"></i></a>How do I download files?</h4>
-<p>Use the <a href="api.html#getfile">getFile</a> method. Please note that this will only work with files of up to 20 MB in size.</p>
+<p>Use the <a href="api.1.html#getfile">getFile</a> method. Please note that this will only work with files of up to 20 MB in size.</p>
 <h4><a class="anchor" href="faq.html#how-do-i-upload-a-large-file" id="how-do-i-upload-a-large-file"><i class="anchor-icon"></i></a>How do I upload a large file?</h4>
 <p>Bots can currently send files of any type of up to 50 MB in size, so yes, very large files won't work for now. Sorry. This limit may be changed in the future.</p>
 <h4><a class="anchor" href="faq.html#can-i-count-on-file-ids-to-be-persistent" id="can-i-count-on-file-ids-to-be-persistent"><i class="anchor-icon"></i></a>Can I count on file_ids to be persistent?</h4>
@@ -248,4 +248,4 @@ removePreloadInit();
 </script>
   </body>
 </html>
-<!-- page generated in 9.16ms -->
+<!-- page generated in 7.77ms -->
